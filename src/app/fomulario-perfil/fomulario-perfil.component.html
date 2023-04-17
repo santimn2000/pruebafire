@@ -1,0 +1,40 @@
+<h2>Bienvenido {{ correo }} !!</h2>
+<div align="center">
+    <table border = 2 >
+      <caption></caption>
+      <tr>
+        <td align="center">
+          Nombre
+        </td>
+        <td>{{userService.userActual.nombre}}</td>
+      </tr>
+      <tr>
+        <td align="center">
+          Apellidos
+        </td>
+        <td>{{userService.userActual.apellidos}}</td>
+      </tr>
+      <tr>
+        <td align="center">
+          Telefono
+        </td>
+        <td>{{userService.userActual.telefono}}</td>
+      </tr>
+      <tr>
+        <td align="center">
+          Correo
+        </td>
+        <td>{{userService.userActual.correo}}</td>
+      </tr><tr>
+        <td align="center">
+          Contraseña
+        </td>
+        <td>{{userService.userActual.contrasena}}</td>
+      </tr>
+
+    </table>
+  </div>
+  <br>
+  <button id="verTodosUsers" name="verTodosUsers" (click)="clickAllUsers()"> Ver todos los usuarios</button>
+<button id="cerrar_sesion" name="cerrar_sesion" (click)="ClickLogout()"> Cerrar sesión</button>
+<router-outlet></router-outlet>

@@ -1,0 +1,33 @@
+CREAR COCHE
+<br><br>
+Introduce la marca:
+<select [(ngModel)]="car.marca" (change)="refreshModelo()" name="marca" id="marca">
+    <option value="alfa">Alfa Romeo</option>
+    <option value="citroen">Citroen</option>
+    <option value="fiat">Fiat</option>
+    <option value="opel">Opel</option>
+    <option value="seat">Seat</option>
+</select>
+<br><br>
+Introduce el modelo:
+<select name="modelo" id="modelo" [(ngModel)]="car.modelo">
+
+    <option *ngFor="let modelo of modelos" value={{modelo}} >{{modelo}}</option>
+
+</select> 
+    
+  
+<br><br>
+Introduce los caballos:
+<input id="caballos" type="text" width="150" height="50" name="caballos" [(ngModel)]="car.caballos">
+<br><br>
+Introduce el color:
+<input id="color" type="text" width="150" height="50" name="color" [(ngModel)]="car.color">
+<br><br>
+Introduce la velocidad máxima:
+<input id="vel_max" type="text" width="150" height="50" name="vel_max" [(ngModel)]="car.vel_max">
+<br><br>
+<button (click)="addCar()">Añadir</button>
+<br><br>
+<button (click)="back()">Volver</button>
+

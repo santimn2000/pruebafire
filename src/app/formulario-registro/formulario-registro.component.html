@@ -1,0 +1,22 @@
+REGISTRO
+<br><br>
+Introduce el nombre:
+<input id="nombre" type="text" width="150" height="50" name="nombre" [(ngModel)]="user.nombre">
+<br><br>
+Introduce los apellidos:
+<input id="apellidos" type="text" width="150" height="50" name="apellidos" [(ngModel)]="user.apellidos">
+<br><br>
+Introduce el número de teléfono:
+<input id="telefono" type="text" width="150" height="50" name="telefono" [(ngModel)]="user.telefono">
+<br><br>
+Introduce el correo electronico:
+<input id="correo" type="text" width="150" height="50" name="correo" [(ngModel)]="user.correo">
+<br><br>
+Introduce la contraseña:
+<input id="contrasena" type="password" width="150" height="50" name="contrasena" [(ngModel)]="user.contrasena">
+<br><br>
+<button (click)="pruebaReg()">Prueba Registrarse</button>
+<br><br>
+<button (click)="clickYatengoCuenta()">Ya tengo una cuenta</button>
+<a [routerLink]="['/login']">Ya tengo cuenta</a>
+

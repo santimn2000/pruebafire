@@ -1,0 +1,165 @@
+<h2>Bienvenido fdsfsd!!</h2>
+<div align="center">
+  <table>
+    <tr>
+      <td>
+        <table border = 2 >
+          <caption>LISTA DE COCHES</caption>
+          <tr>
+            <td align="center">
+              Marca
+            </td>
+            <td align="center">
+              Modelo
+            </td>
+            <td align="center">
+              Color
+            </td>
+            <td align="center">
+              Caballos
+            </td>
+            <td align="center">
+              Velocidad maxima
+            </td>
+            <td align="center">
+              Modificar
+            </td>
+            <td align="center">
+                Borrar
+            </td>
+          </tr>
+          <tr *ngFor="let car of cars">
+            <td>
+              {{car.marca}}
+            </td>
+            <td>
+                {{car.modelo}}
+            </td>
+            <td>
+                {{car.color}}
+            </td>
+            <td>
+                {{car.caballos}}
+            </td>
+            <td>
+                {{car.vel_max}}
+            </td>
+            <td>
+                <button (click)="ClickModificar(car)">Modificar</button>
+            </td>
+            <td>
+                <button (click)="ClickBorrar(car)">Borrar</button>
+            </td>
+            
+          </tr>
+        </table>
+      </td>
+
+      <td>
+        Introduce la marca:
+        <select [(ngModel)]="car.marca" (change)="refreshModelo()" name="marca" id="marca">
+            <option value="">Sin seleccionar</option>
+            <option value="alfa">Alfa Romeo</option>
+            <option value="citroen">Citroen</option>
+            <option value="fiat">Fiat</option>
+            <option value="opel">Opel</option>
+            <option value="seat">Seat</option>
+        </select>
+        <br><br>
+        Introduce el modelo:
+        <select name="modelo" id="modelo" [(ngModel)]="car.modelo">
+            <option value="">Sin seleccionar</option>
+            <option *ngFor="let modelo of modelos" value={{modelo}} >{{modelo}}</option>
+        </select> 
+        <br><br>
+        Introduce los caballos:
+        <input id="caballos" type="text" width="150" height="50" name="caballos" [(ngModel)]="car.caballos">
+        <br><br>
+        Introduce el color:
+        <select [(ngModel)]="car.color" id = "color" name ="color">
+          <option value="">Sin seleccionar</option>
+          <option value="verde">Verde</option>
+          <option value="rojo">Rojo</option>
+          <option value="azul">Azul</option>
+          <option value="morado">Morado</option>
+          
+          
+        </select>
+        <!--<input id="color" type="text" width="150" height="50" name="color" [(ngModel)]="car.color"> 
+        -->
+        <br><br>
+        Introduce la velocidad máxima:
+        <input id="vel_max" type="text" width="150" height="50" name="vel_max" [(ngModel)]="car.vel_max">
+        <br>
+  
+
+      </td>
+
+      <td>
+        <table border = 2 >
+          <caption>CONSULTA DE COCHES</caption>
+          <tr>
+            <td align="center">
+              Marca
+            </td>
+            <td align="center">
+              Modelo
+            </td>
+            <td align="center">
+              Color
+            </td>
+            <td align="center">
+              Caballos
+            </td>
+            <td align="center">
+              Velocidad maxima
+            </td>
+            <td align="center">
+              Modificar
+            </td>
+            <td align="center">
+                Borrar
+            </td>
+          </tr>
+          <tr *ngFor="let car of userService.resQuery">
+            <td>
+              {{car.marca}}
+            </td>
+            <td>
+                {{car.modelo}}
+            </td>
+            <td>
+                {{car.color}}
+            </td>
+            <td>
+                {{car.caballos}}
+            </td>
+            <td>
+                {{car.vel_max}}
+            </td>
+            <td>
+                <button (click)="ClickModificar(car)">Modificar</button>
+            </td>
+            <td>
+                <button (click)="ClickBorrar(car)">Borrar</button>
+            </td>
+            
+          </tr>
+        </table>
+      </td>
+
+    </tr>
+  </table> 
+
+
+   
+  </div>
+  <br>
+<button id="consulta" name="consulta" (click)="consultar()"> Consultas</button>
+<br><br>  
+<button id="crearCoche" name="crearCoche" (click)="irACrearCoche()"> Crear coche</button>
+<br><br>  
+<button id="listaUsuarios" name="lsitausuarios" (click)="irAListaUsuarios()"> Lista de usuarios</button>
+<br><br>  
+<button id="cerrar_sesion" name="cerrar_sesion" (click)="ClickLogout()"> Cerrardfdsf sesión</button>
+<router-outlet></router-outlet>

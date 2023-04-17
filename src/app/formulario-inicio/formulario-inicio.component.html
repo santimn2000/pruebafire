@@ -1,0 +1,53 @@
+<h2>Bienvenido {{ correo }} fdsfsd!!</h2>
+<div align="center">
+    <table border = 2 >
+      <caption>LISTA DE USUARIOS</caption>
+      <tr>
+        <td align="center">
+          Nombre
+        </td>
+        <td align="center">
+          Apellidos
+        </td>
+        <td align="center">
+          Correo
+        </td>
+        <td align="center">
+          Telefono
+        </td>
+        <td align="center">
+          Borrar
+        </td>
+        <td align="center">
+          Modificar
+        </td>
+      </tr>
+      <tr *ngFor="let user of users">
+        <td>
+          {{user.nombre}}
+        </td>
+        <td>
+          {{user.apellidos}}
+        </td>
+        <td>
+          {{user.correo}}
+        </td>
+        <td>
+          {{user.telefono}}
+        </td>
+        <td>
+            <button (click)="ClickBorrar(user)">Borrar</button>
+        </td>
+        <td>
+          <button (click)="ClickModificar(user)">Modificar</button>
+      </td>
+      </tr>
+    </table>
+  </div>
+  <br>
+<button id="verMiPerfil" name="verMiPerfil" (click)="ClickVerPerfil()"> Ver mi perfil</button>
+<br><br>
+<button id="listaCoches" name="listaCoches" (click)="irAListaCoche()"> Lista de coches</button>
+<br><br>  
+<button id="cerrar_sesion" name="cerrar_sesion" (click)="ClickLogout()"> Cerrardfdsf sesión</button>
+<router-outlet></router-outlet>

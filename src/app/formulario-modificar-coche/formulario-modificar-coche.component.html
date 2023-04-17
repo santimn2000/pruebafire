@@ -1,0 +1,31 @@
+MODIFICAR COCHE
+<br><br>
+<select [(ngModel)]="carMod.marca" (change)="refreshModelo()" name="marca" id="marca">
+    <option value="alfa">Alfa Romeo</option>
+    <option value="citroen">Citroen</option>
+    <option value="fiat">Fiat</option>
+    <option value="opel">Opel</option>
+    <option value="seat">Seat</option>
+</select>
+<br><br>
+Introduce el modelo:
+<select name="modelo" id="modelo" [(ngModel)]="carMod.modelo">
+
+    <option *ngFor="let modelo of modelos" value={{modelo}} >{{modelo}}</option>
+
+</select> 
+    
+  
+<br><br>
+Introduce los caballos:
+<input id="caballos" type="text" width="150" height="50" name="caballos" [(ngModel)]="carMod.caballos">
+<br><br>
+Introduce el color:
+<input id="color" type="text" width="150" height="50" name="color" [(ngModel)]="carMod.color">
+<br><br>
+Introduce la velocidad máxima:
+<input id="vel_max" type="text" width="150" height="50" name="vel_max" [(ngModel)]="carMod.vel_max">
+<br><br>
+<button (click)="clickModificar()">Modificar</button>
+<br><br>
+<button (click)="clickVolver()">Volver</button>

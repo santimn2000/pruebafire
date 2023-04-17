@@ -1,0 +1,20 @@
+MODIFICAR USUARIO 
+<br><br>
+Introduce el nombre:
+<input id="nombre" type="text" width="150" height="50" name="nombre" [(ngModel)]="userMod.nombre">
+<br><br>
+Introduce los apellidos:
+<input id="apellidos" type="text" width="150" height="50" name="apellidos" [(ngModel)]="userMod.apellidos">
+<br><br>
+Introduce el número de teléfono:
+<input id="telefono" type="text" width="150" height="50" name="telefono" [(ngModel)]="userMod.telefono">
+<br><br>
+Introduce el correo electronico:
+<input id="correo" type="text" width="150" height="50" name="correo" [(ngModel)]="userMod.correo">
+<br><br>
+Introduce la contraseña:
+<input id="contrasena" type="password" width="150" height="50" name="contrasena" [(ngModel)]="userMod.contrasena">
+<br><br>
+<button (click)="clickModificar()">Modificar</button>
+<br><br>
+<button (click)="clickVolver()">Volver</button>
